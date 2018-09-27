@@ -41,18 +41,27 @@ int main(int argc, char *argv[])
 
     GLuint positionsVboId = 0;
 
-    //CREATE A NEW VBO ON THE GPU AND BIND IT
+    //CREATE A NEW VBO (Vertex Buffer Object) ON THE GPU AND BIND IT
     glGenBuffers(1, &positionsVboId);
 
     if (!positionsVboId) { throw std::exception(); } //CHECK FOR ERROR
     
-    glBindBuffer(GL_ARRAY_BUFFER, positionsVboId);
+    glBindBuffer(GL_ARRAY_BUFFER, positionsVboId); //OPENS THE BUFFER WITH THE POSITIONS INFORMATION
     glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW); //UPLOAD A COPY OF THE DATA FROM MEMORY INTO THE VBO
+    glBindBuffer(GL_ARRAY_BUFFER, 0); //RESET THE STATE (CLOSING THE BUFFER)
+
+    //CREATE A VAO (Vertex Array Object) 
+    GLuint vaoId = 0;
+    glGenVertexArrays(1, &vaoId); //CREATE A NEW VAO ON THE GPU AND BIND IT
+    
+    if (!vaoId) { throw std::exception(); } //CHECK FOR ERROR
+
+    glBindVertexArray(vaoId);
+    glBindBuffer(GL_ARRAY_BUFFER, positionsVboId); //BIND THE POSITION VBO, ASSIGN IT TO THE POSITION 0 ON THE BOUND VAO AND FLAG IT TO BE USED
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (void *)0);
+    glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0); //RESET THE STATE
-
-
-
-
+    glBindVertexArray(0);
 
 
 
