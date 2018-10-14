@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SDL_MAIN_HANDLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -105,7 +105,7 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SDL_MAIN_HANDLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -139,6 +139,18 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\glew\include;C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\glew\include;C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\src\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\VertexArray.cpp" />
+    <ClCompile Include="..\src\VertexBuffer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ShaderProgram.h" />
+    <ClInclude Include="..\src\VertexArray.h" />
+    <ClInclude Include="..\src\VertexBuffer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\simple.frag" />
+    <None Include="..\simple.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
