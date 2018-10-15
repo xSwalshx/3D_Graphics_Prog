@@ -40,10 +40,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\simple.frag">
+    <None Include="..\simple.vert">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\simple.vert">
+    <None Include="..\shaders\simple.frag">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

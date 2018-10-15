@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{31569A47-1A1D-477B-B003-BB0E5F571787}</ProjectGuid>
     <RootNamespace>triangle</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,12 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\shaders;..\contrib\msvc-windows-x86\SDL2\include;..\contrib;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SDL_MAIN_HANDLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>..\contrib\msvc-windows-x86\SDL2\lib;..\contrib\msvc-windows-x86\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\contrib\msvc-windows-x86\SDL2\lib;..\shaders;..\contrib\msvc-windows-x86\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;glew32.lib;opengl32.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -149,7 +149,7 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
     <ClInclude Include="..\src\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\simple.frag" />
+    <None Include="..\shaders\simple.frag" />
     <None Include="..\simple.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
