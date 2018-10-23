@@ -83,6 +83,7 @@ ShaderProgram::ShaderProgram()
 
   glBindAttribLocation(id, 0, "in_Position");
   glBindAttribLocation(id, 1, "in_Color");
+  glBindAttribLocation(id, 2, "in_TexCoord");
 
   glLinkProgram(id);
    success = 0;
@@ -179,7 +180,8 @@ ShaderProgram::ShaderProgram(std::string vert, std::string frag)
 
   glBindAttribLocation(id, 0, "in_Position");
   glBindAttribLocation(id, 1, "in_Color");
-
+  glBindAttribLocation(id, 2, "in_TexCoord");
+  
   glLinkProgram(id);
    success = 0;
   glGetProgramiv(id, GL_LINK_STATUS, &success);
@@ -195,7 +197,6 @@ ShaderProgram::ShaderProgram(std::string vert, std::string frag)
   glDeleteShader(fragmentShaderId);
 
   //---------------------------------------------------------------------------------------//
-
 }
 
 ///DRAW
@@ -234,17 +235,16 @@ void ShaderProgram::setUniform(std::string uniform, float value)
   glUseProgram(0);
 }
 
-/////INT
-//void ShaderProgram::setUniform(std::string uniform, int value)
-//{
-//  GLint uniformId = glGetUniformLocation(id, uniform.c_str());
-//
-//  if(uniformId == -1)  { throw std::exception(); }
-//
-//  glUseProgram(id);
-//  glUniform1i(uniformId, value);
-//  glUseProgram(0);
-//}
+void ShaderProgram::setUniform(std::string uniform, int value)
+{
+  GLint uniformId = glGetUniformLocation(id, uniform.c_str());
+
+  if(uniformId == -1)  { throw std::exception(); }
+
+  glUseProgram(id);
+  glUniform1i(uniformId, value);
+  glUseProgram(0);
+}
 
 ///MAT 4
 void ShaderProgram::setUniform(std::string uniform, glm::mat4 value)

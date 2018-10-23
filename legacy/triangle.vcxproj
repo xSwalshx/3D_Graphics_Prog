@@ -76,12 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\shaders;..\contrib\msvc-windows-x86\SDL2\include;..\contrib;..\contrib\msvc-windows-x86\glew\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\contrib\msvc-windows-x86\SDL2\include;..\contrib\msvc-windows-x86\glew\include;..\contrib;..\shaders</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SDL_MAIN_HANDLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>..\contrib\msvc-windows-x86\SDL2\lib;..\shaders;..\contrib\msvc-windows-x86\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\contrib\msvc-windows-x86\SDL2\lib;..\contrib\msvc-windows-x86\glew\lib;..\shaders;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;glew32.lib;opengl32.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -140,17 +140,22 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\glew\include;C:\Users\Samuel\Documents\University\2st Year\S1 - 3D Graphics Programming\3D_Graphics_Prog\contrib\msvc-windows-x86\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\src\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\stb_image.cpp" />
     <ClCompile Include="..\src\VertexArray.cpp" />
     <ClCompile Include="..\src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ShaderProgram.h" />
+    <ClInclude Include="..\src\stb_image.h" />
     <ClInclude Include="..\src\VertexArray.h" />
     <ClInclude Include="..\src\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\shaders\simple.frag" />
     <None Include="..\shaders\simple.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\images\Abstergo_Logo.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
