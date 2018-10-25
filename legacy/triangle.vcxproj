@@ -141,12 +141,14 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
     </ClCompile>
     <ClCompile Include="..\src\ShaderProgram.cpp" />
     <ClCompile Include="..\src\stb_image.cpp" />
+    <ClCompile Include="..\src\Texture.cpp" />
     <ClCompile Include="..\src\VertexArray.cpp" />
     <ClCompile Include="..\src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ShaderProgram.h" />
     <ClInclude Include="..\src\stb_image.h" />
+    <ClInclude Include="..\src\Texture.h" />
     <ClInclude Include="..\src\VertexArray.h" />
     <ClInclude Include="..\src\VertexBuffer.h" />
   </ItemGroup>
