@@ -69,5 +69,11 @@
     <Image Include="..\images\Abstergo_Logo.png">
       <Filter>Resource Files\images</Filter>
     </Image>
+    <Image Include="..\images\curuthers_diffuse.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="..\images\re_hall_diffuse.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -67,14 +67,10 @@ int main(int argc, char *argv[])
   //-----------------------------------------------------------------------------------------------//
 
   VertexArray *hallShape = new VertexArray("../models/re_hall_baked.obj");
-  Texture *hallTexture = new Texture("../images/re_hall_defuse.png");
-
-  //-----------------------------------------------------------------------------------------------//
+  Texture *hallTexture = new Texture("../images/re_hall_diffuse.png");
 
   VertexArray *shape = new VertexArray("../models/curuthers.obj");
   Texture *texture = new Texture("../images/curuthers_diffuse.png");
-
-  //-----------------------------------------------------------------------------------------------//
 
   ShaderProgram *shader = new ShaderProgram("../shaders/simple.vert", "../shaders/simple.frag");
 
