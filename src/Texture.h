@@ -12,5 +12,4 @@ public:
   Texture(std::string path);
   glm::vec2 getSize();
   GLuint getId();
-
 };

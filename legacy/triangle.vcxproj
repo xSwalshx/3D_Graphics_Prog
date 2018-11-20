@@ -158,6 +158,8 @@ copy ..\contrib\msvc-windows-x86\glew\bin\*.dll $(OutputPath)</Command>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\images\Abstergo_Logo.png" />
+    <Image Include="..\images\curuthers_diffuse.png" />
+    <Image Include="..\images\re_hall_diffuse.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
