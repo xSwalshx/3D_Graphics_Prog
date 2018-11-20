@@ -12,6 +12,7 @@ Texture::Texture(std::string path)
   int channels = 0;
 
   //IMAGE LOADED AS AN UNSIGNED CHAR* (NAME OF IMAGE, WIDTH, HEIGHT, CHANNELS, NUMBER OF CHANNLES (R/G/B/A)
+
   unsigned char *data = stbi_load(path.c_str(), &w, &h, &channels, 4);
 
   if (!data) { throw std::exception(); }
